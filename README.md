@@ -33,8 +33,8 @@
 ## 🧙‍♂️ 내가 참여한 주요기능
 
 ### 👩‍🎤 Emotion을 사용한 **공통 컴포넌트 구현 (Input)** 
-<details>
-<summary>👩‍💻Input 공통 컴포넌트 코드보기</summary>
+
+👩‍💻Input 공통 컴포넌트 코드보기
 
 ```js
 import { ComponentProps, CSSProperties, ReactNode } from 'react';
@@ -83,7 +83,6 @@ export function Input({
 }
 ```
 
-</details>
 
 개발 진행 전 디자인 단계에서 **공통으로 쓰일 컴포넌트를 분리** 후 공통 컴포넌트 개발진행
 <img width="90%" src="https://github.com/moonjieun/clip/assets/102341066/76ffabb0-ea22-47eb-b5ea-53fb222b497e"/>
