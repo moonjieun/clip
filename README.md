@@ -1,5 +1,5 @@
 # CLIP(e-commerce)
-<img width="85%" src="https://github.com/moonjieun/clip/assets/102341066/f8f0711f-1e99-4996-a7ba-d3ed8cfea366"/>
+<img width="86%" src="https://github.com/moonjieun/clip/assets/102341066/f8f0711f-1e99-4996-a7ba-d3ed8cfea366"/>
 
 ## 💻 프로젝트 소개
 여러 쇼핑몰을 한 곳에 모아 사용자들이 좀 더 쉽게 다양한 쇼핑몰에 접근할 수 있도록 만든 쇼핑몰 사이트입니다.
