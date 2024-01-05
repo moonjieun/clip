@@ -1,5 +1,5 @@
 # CLIP(e-commerce)
-<img width="90%" src="https://github.com/supercoding-commerce/FE/assets/102341066/65c6c4dd-7bc7-447c-83d8-1c3eba5caca1"/>
+<img width="85%" src="https://github.com/moonjieun/clip/assets/102341066/f8f0711f-1e99-4996-a7ba-d3ed8cfea366"/>
 
 ## 💻 프로젝트 소개
 여러 쇼핑몰을 한 곳에 모아 사용자들이 좀 더 쉽게 다양한 쇼핑몰에 접근할 수 있도록 만든 쇼핑몰 사이트입니다.
@@ -84,6 +84,8 @@ export function Input({
 ```
 
 
+
+
 개발 진행 전 디자인 단계에서 **공통으로 쓰일 컴포넌트를 분리** 후 공통 컴포넌트 개발진행
 <img width="90%" src="https://github.com/moonjieun/clip/assets/102341066/76ffabb0-ea22-47eb-b5ea-53fb222b497e"/>
 
@@ -103,28 +105,28 @@ export function Input({
 ### **검색**
 - **디바운스 적용** [(✔벨로그 정리)](https://velog.io/@moonjieun/%EA%B2%80%EC%83%89%EC%B0%BD%EC%97%90-debounce-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0)   
     - 검색창 예시:`'k', 'ko', 'kor'` 이렇게 비효율적으로 통신이 3번 이루어지는 것을 방지하기 위해 정해진 딜레이 후 한번만 처리하는 패턴을 사용하여 불필요한 네트워크 통신을 막기 위해 적용하게 되었습니다.
-  <img width="90%" src="https://github.com/moonjieun/clip/assets/102341066/76100b04-ce12-463f-b88f-b943fc16a277"/>
+  <img width="88%" src="https://github.com/moonjieun/clip/assets/102341066/f0e37e17-9ea8-4ef4-b731-4790663630e0"/>
 
 - 최근검색어가 있을시 표시(최근검색 UI클릭시 라우팅, 전체, 선택삭제 기능)
   <br/> 
-  <img width="68%" src="https://github.com/moonjieun/clip/assets/102341066/707e59c3-473f-4e6e-9512-afccee4de21d"/>
+  <img width="88%" src="https://github.com/moonjieun/clip/assets/102341066/07490ff7-1115-4542-81ac-0dafa6d00b61"/>
 
-### **검색 상품리스트** [(소스코드)](https://velog.io/@moonjieun/%EA%B2%80%EC%83%89%EC%B0%BD%EC%97%90-debounce-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0)   
+### **검색상품 리스트페이지 및 필터링 모달구현** [(소스코드)](https://velog.io/@moonjieun/%EA%B2%80%EC%83%89%EC%B0%BD%EC%97%90-debounce-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0)   
 필터별로 다른 통신을 하여 데이터를 받아오는 로직은 코드 가독성을 높이고 유지보수를 쉽게하기 위해 apis로 모듈화 하여 개발하였고, 상품리스트 쪽 무한스크롤 기능 또한 `useInfiniteQuery`을 사용한 `CategoryList.tsx`컴포넌트로 만들었습니다.
 - **`handleFilterButtonClick`** 함수는 필터 버튼이 클릭될 때 호출하며 이 함수는 전달된 필터에 따라 **`selectedOption`** 상태를 설정합니다.
 - **`FilterModal`** 에서 옵션이 선택될 때 호출되는 **`handleOptionSelect`** 함수는 선택된 옵션을 기반으로 어떤 카테고리(필터 타입)를 업데이트해야 하는지를 결정하기 위해 **`selectedOption`** 상태를 사용하였습니다.
 - 필터옵션', '나이', '성별'에 대한 버튼들은 각각의 상태 (**`filter`**, **`ageCategory`**, **`genderCategory`**)를 사용하여 선택된 옵션을 표시하고 모달에서 옵션이 선택되면 **`selectedOption`** 을 기반으로 해당 상태가 업데이트되게 하였습니다.
-- **`handleOptionSelect`** 함수의 switch문은 **`selectedOption`** (선택된 옵션)을 기반으로 어떤 카테고리 상태(**`filter`**, **`ageCategory`**, **`genderCategory`**)를 업데이트할지 결정합니다.
+- **`handleOptionSelect`** 함수안 switch문은 **`selectedOption`** (선택된 옵션)을 기반으로 어떤 카테고리 상태(**`filter`**, **`ageCategory`**, **`genderCategory`**)를 업데이트할지 결정합니다.
 - 타입 안정성을 위하여 **`FilterOption`** 유니언 타입으로 가질 수 있는 가능한 값들을 제한하여 실수를 방지하고 선택된 옵션이 미리 정의된 필터 옵션 중 하나이게 하였습니다.
 
- <img width="90%" src="https://github.com/moonjieun/clip/assets/102341066/c413aa26-77d8-4726-8afb-c15816cb37ab"/>
+ <img width="60%" src="https://github.com/moonjieun/clip/assets/102341066/a6e61fac-0221-412b-ad46-d68d86b6a87c"/>
 
 - 카테고리 공통컴포넌트를 이용한 카테고리 메뉴 생성, 클릭시 해당 카테고리 페이지로 라우팅 + 상품 필터링
 - 필터링 모달 기능 구현
     - 필터 선택예시:) 저가 순 선택 시 요청 데이터 받아오는 중일 때 로딩상태 처리를 보이게 하기위해 빠른 3G로 설정한 상태입니다.
 - `useInfiniteQuery` 훅에서 제공되는 기능인  `isFetching`과 `status`로 데이터 로딩과 에러처리간단하게 처리해주었습니다.
 <br/>
-     <img width="90%" src="https://github.com/moonjieun/clip/assets/102341066/c1876a21-5951-4824-9c19-8f3c346951ed"/>
+     <img width="90%" src="https://github.com/moonjieun/clip/assets/102341066/efa72537-0a6c-41be-829a-2daf1af758bd"/>
 <br/>
 
 - 해당 카테고리 페이지 상품리스트 `useInfiniteQuery` 적용
