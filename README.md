@@ -99,7 +99,6 @@ export function Input({
 - 스와이퍼 라이브러리를 이용한 홈 배너 및 **`useInfiniteQuery`** 사용한 무한스크롤 구현
 - **`react-query`라이브러리인 `useInfiniteQuery`의 사용** 하여 상품 무한스크롤 구현 [(✔벨로그 정리)](https://velog.io/@moonjieun/refactor-useInfiniteQuery-%EC%A0%81%EC%9A%A9%EC%8B%9C%ED%82%A4%EA%B8%B0)
     - 캐싱 및 상태 관리 기능을 활용하여 **데이터를 쉽게 관리**하고 **로딩 중, 에러 상태를 간단히 처리**해 볼 수 있엇으며, **페이징과 관련 된 복잡한 로직을 간결**히 해줄 수 있어 이로 인해 **코드 간결성 유지보수, 데이터 관리와 관련된 다양한 기능** 또한 사용 할 수 있어 적용하게 되었습니다.
-<img width="90%" src="https://github.com/moonjieun/clip/assets/102341066/173d4045-d24a-4f40-8968-684e687d1da0"/>
 <br/>
 
 ### **검색**
@@ -126,9 +125,34 @@ export function Input({
     - 필터 선택예시:) 저가 순 선택 시 요청 데이터 받아오는 중일 때 로딩상태 처리를 보이게 하기위해 빠른 3G로 설정한 상태입니다.
 - `useInfiniteQuery` 훅에서 제공되는 기능인  `isFetching`과 `status`로 데이터 로딩과 에러처리간단하게 처리해주었습니다.
 <br/>
-     <img width="90%" src="https://github.com/moonjieun/clip/assets/102341066/efa72537-0a6c-41be-829a-2daf1af758bd"/>
+ <img width="90%" src="https://github.com/moonjieun/clip/assets/102341066/efa72537-0a6c-41be-829a-2daf1af758bd"/>
 <br/>
 
 - 해당 카테고리 페이지 상품리스트 `useInfiniteQuery` 적용
+  
+### **이미지 최적화**
+최적화 전 코드
+```js
+{slideData.map((image, index)=> (
+	<CustomSwiperSlide key={index} style={{backgroundImage: `url(${image})`}} />
+)}
+```
+최적화 후 코드
+```js
+ {slideData.map((image, index) => (
+          <S.CustomSwiperSlide key={index}>
+            <picture>
+              <source srcSet={image.srcWebp} type="image/webp" />
+              <img
+                src={image.srcPng}
+                alt={`EventBanner-${index + 1}`}
+                style={{ width: '100%', aspectRatio: '16/9' }}
+                loading="lazy"
+              />
+            </picture>
+          </S.CustomSwiperSlide>
+        ))}
+```
+
   
 <br/>
